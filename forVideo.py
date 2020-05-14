@@ -8,6 +8,7 @@ def form_blue(frame):
 
 
 def formate(frame):
+    cv.imshow("Frame", frame)
     frame = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
     frame = cv.blur(frame, (5, 5))
     frame = cv.inRange(frame, (89, 123, 73), (255, 255, 255))
@@ -17,7 +18,7 @@ def formate(frame):
 
 
 def detect(frame):
-    cap = cv.VideoCapture("IMG_1800.MOV")
+    cv.imshow("Frame", frame)
     noDrive = cv.imread("park.png")
     ped = cv.imread("stop.jpg")
     noDrive = form_blue(noDrive)
@@ -57,11 +58,10 @@ def main():
     cap = cv.VideoCapture("IMG_1800.mov")
     ret, frame = cap.read()
     while(ret):
-
         print(detect(frame))
         ret, frame = cap.read()
-        framec = frame.copy()
-
+        if ret:
+            framec = frame.copy()
     cap.release()
     cv.destroyAllWindows()
 
