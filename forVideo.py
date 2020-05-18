@@ -53,6 +53,25 @@ def detect(frame):
             return "Stop"
     return 0
 
+def only_sravn(roImg, b):
+    if not b:
+        return "Nothing"
+    park = cv.imread("park.png")
+    park = form_blue(park)
+    roImg = cv.resize(roImg, (64, 64))
+    roImg = cv.inRange(roImg, (89, 123, 73), (255, 255, 255))
+    park_k = 0
+    for i in range(64):
+        for j in range(64):
+            if roImg[i][j] == None:
+                continue
+            if roImg[i][j] == park[i][j]:
+                park_k += 1
+
+    if park_k > 1600:
+        return "Parking "
+    return "Nothing "
+
 
 def main():
     cap = cv.VideoCapture("IMG_1800.mov")

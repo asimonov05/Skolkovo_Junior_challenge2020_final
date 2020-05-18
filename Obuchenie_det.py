@@ -3,19 +3,19 @@ import dlib
 import os
 import xml.etree.ElementTree as pars
 
-dir = r"/Users/asimonov/PycharmProjects/Skolkovo_Junior_challenge2020_final/detect/"
+dir = r"/Users/asimonov/PycharmProjects/Skolkovo_Junior_challenge2020_final/detect"
 
-ImgNameL = os.listdir(dir + r"/images")
+ImgNameL = os.listdir(dir + r"/images/noDrive/")
 
 images = []
 annots = []
 
 for FileName in ImgNameL:
-    Img = cv.imread(dir + r"/images", + FileName)
+    Img = cv.imread(dir + r"/images/noDrive/" + FileName)
     Img = cv.cvtColor(Img, cv.COLOR_BGR2RGB)
 
     FName = FileName.split(".")[0]
-    e = pars.parse(dir+r"/annotations" + FName + ".xml")
+    e = pars.parse(dir+r"/annotations/noDrive_save/" + FName + ".xml")
     root = e.getroot()
 
     object = root.find("object")
@@ -32,5 +32,5 @@ options = dlib.simple_object_detector_training_options()
 
 detector = dlib.train_simple_object_detector(images, annots, options)
 
-detector.save("tdl.svm")
+detector.save("noDrive.svm")
 print("Succsesfule")

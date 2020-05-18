@@ -1,0 +1,26 @@
+<annotation>
+	<folder>parking</folder>
+	<filename>IMG_2034.JPG</filename>
+	<path>/Users/asimonov/Desktop/parking/IMG_2034.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>3024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>parking</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1856</xmin>
+			<ymin>837</ymin>
+			<xmax>2503</xmax>
+			<ymax>1423</ymax>
+		</bndbox>
+	</object>
+</annotation>

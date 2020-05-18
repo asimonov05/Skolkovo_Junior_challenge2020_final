@@ -1,0 +1,26 @@
+<annotation>
+	<folder>noDrive</folder>
+	<filename>IMG_2089.JPG</filename>
+	<path>/Users/asimonov/Desktop/noDrive/IMG_2089.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>4032</width>
+		<height>3024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>noDrive</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2359</xmin>
+			<ymin>745</ymin>
+			<xmax>3006</xmax>
+			<ymax>1367</ymax>
+		</bndbox>
+	</object>
+</annotation>
