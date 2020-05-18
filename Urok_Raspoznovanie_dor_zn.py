@@ -1,6 +1,6 @@
 import cv2 as cv
 
-cap = cv.VideoCapture("IMG_1800.mov")
+cap = cv.VideoCapture(0)
 
 while (True):
     ret, frame = cap.read()
@@ -25,7 +25,7 @@ while (True):
         cv.rectangle(frame, (x,y), (x + w, y + h), (0, 255, 0), 2)
         cv.imshow("Cont", frame)
 
-        roImg = Framec[y:y + h,x:x + w]
+        roImg = Framec[y:y + h, x:x + w]
         roImg = cv.resize(roImg, (64, 64))
         roImg = cv.inRange(roImg, (89, 91, 149), (255, 255, 255))
         cv.imshow("Cut", roImg)
